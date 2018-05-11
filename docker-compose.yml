@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  aspnetcore:
+    build: docker/aspnetcore
+    ports:
+     - "80:80"
+    volumes:
+      - "./src:/app"
+    command: bash -c "dotnet restore && dotnet build && dotnet watch run"
